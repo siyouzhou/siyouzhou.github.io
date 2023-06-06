@@ -15,7 +15,17 @@
     }, searchAnimDuration);
   };
 
-  $('.nav-search-btn').on('click', function(){
+  var s = [
+        '<div style="display: none;">',
+          '<script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>',
+        '</div>'
+      ].join('');
+
+  var di = $(s);
+
+  $('#container').append(di);
+
+  $('#nav-search-btn').on('click', function(){
     if (isSearchAnim) return;
 
     startSearchAnim();
@@ -41,7 +51,6 @@
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
       id = 'article-share-box-' + $this.attr('data-id'),
-      title = $this.attr('data-title'),
       offset = $this.offset();
 
     if ($('#' + id).length){
@@ -56,10 +65,10 @@
         '<div id="' + id + '" class="article-share-box">',
           '<input class="article-share-input" value="' + url + '">',
           '<div class="article-share-links">',
-            '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"><span class="fa fa-twitter"></span></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"><span class="fa fa-pinterest"></span></a>',
-            '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl + '" class="article-share-linkedin" target="_blank" title="LinkedIn"><span class="fa fa-linkedin"></span></a>',
+            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
           '</div>',
         '</div>'
       ].join('');
@@ -89,13 +98,13 @@
   // Caption
   $('.article-entry').each(function(i){
     $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().is('a')) return;
+      if ($(this).parent().hasClass('fancybox')) return;
 
       var alt = this.alt;
 
       if (alt) $(this).after('<span class="caption">' + alt + '</span>');
 
-      $(this).wrap('<a href="' + this.src + '" data-fancybox=\"gallery\" data-caption="' + alt + '"></a>')
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
     });
 
     $(this).find('.fancybox').each(function(){
