@@ -1,22 +1,381 @@
-doctype html
-html
-	include partial/head.jade
-	body
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据库系统原理 | QI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-		#postContainer
-			#postTop
-				h4#logo #{theme.logo}
-				br
-				br
-				h2#postTitle #{page.title}
-				br
-				span.postTime(class='fa fa-calendar' aria-hidden='true') #{date(page.date['_i'],'YYYY-M-D')}
-				each tag in page.tags.data
-					span.postTags(class='fa fa-tags'  aria-hidden='true') &nbsp;#{tag.name}
-				br
-				br
-			-str = markdown(page.content)
-			section#articleDiv!= str
-		script(src='/js/jquery.min.js')
-		script(src='/js/highlight.min.js')
-		script(src='/js/start.js')
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QI</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数据库系统原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据库系统原理
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2023-06-07T02:03:37.241Z" itemprop="datePublished">2023年06月07日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1.jpeg"><br>数据库模型：层次模型，网状模型，关系模型</p>
+<p>数据库发展阶段：<br>层次数据库（Hierarchical Database）：层次数据库是20世纪60年代开始出现的，层次数据库是最早的数据库之一。</p>
+<p>网状数据库（Network Database）：网状数据库是20世纪70年代中期到80年代初期的技术，网状数据库是在层次数据库的基础上发展而来的一种数据库，它的数据模型是网状结构。</p>
+<p>关系数据库（Relational Database）：关系数据库是20世纪80年代中期开始出现的，关系数据库是目前应用最广泛的一种数据库，它的数据模型是基于关系模型的。在关系数据库中。</p>
+<p>数据库模型三要素：数据结构，数据操作，数据完整性约束</p>
+<p>数据的三级模式与两层映像:<br>内模式:对应于物理层数据抽象，它是数据的物理结构和存储方式的描述，是数据在数据库内部的表示方式。<br>模式:对应于逻辑层数据抽象，它是数据库中全体数据结构和特征描述，是所有用户的公共数据视图。<br>外模式:对应于视图层数据抽象，它是用户能够看见和使用的局部数据的逻辑结构和特征描述。</p>
+<p>两层映像：外模式&#x2F;模式映像 模式&#x2F;内模式映像<br>          实现了抽象层次的数据之间联系和转换，正是这两层映像保证了数据在数据库中具有较高的数据独立性和物理独立型</p>
+<p>数据库组成：数据库，数据库管理系统，应用程序，数据库管理员，最终用户</p>
+<p>模型与关系代数：<br>基本关系代数运算：并，差，笛卡尔积，选择，投影<br>关系模型的完整性约束：实体完整性约束，参照完整性约束，用户自定义</p>
+<p>SQL语句：<br>常用语句：SELECT（查询） INSERT(插入数据)   DELETE(删除表中的数据)   UPDATE(更新)   DROP(删除表和数据库) DELETE(删除数据) PRIMARY KEY(关键字&#x2F;主码) WHERE(条件)*（所有的）   *注意：如果大写记不住可以记住小写最好是自己上手操作学会用法</p>
+<p>SQL使用流程：    *为了方便看得懂就一步一步来<br>查看数据库：<br>SHOW DATABASES;</p>
+<p>创建数据库：<br>CREATE DATABASE 数据库名称;     *（不要疑惑为什么上面是DATABASES 下面是DATABASE 因为上面查的数据库不可能只有一个数据库）</p>
+<p>使用数据库：<br>USE 数据库名字;</p>
+<p>创建表：<br>CREATE TABLE 表名<br>(列名  数据类型() PRIMARY KEY,<br> 列名   数据类型(),<br>  列名   数据类型());</p>
+<p>插入数据：<br>INSERT INTO 表名 (列名1,列名2,列名3)<br>VALUES(‘插入的数据名字1’,’插入的数据名字2’,’插入的数据名字3’);</p>
+<p>查询表：<br>SELECT *<br>FROM 表名;</p>
+<p>更新数据：<br>UPDATE 表名<br>SET 源数据&#x3D;’更改的数据’<br>WHERE 列名&#x3D;’源数据’;</p>
+<p>删除数据库：<br>DROP DATABASE 数据库名;<br>删除表：<br>DROP TABLE 表名;</p>
+<p>删除数据：<br>DELETE FROM 表名<br>WHERE 列名&#x3D;’数据’;</p>
+<p>后面还有很多语句一般考不到就不过多说。</p>
+<p>数据库建模：概念建模，逻辑建模，物理建模</p>
+<p>数据库理论与求精：<br>  一个好的数据库应该尽可能减少数据沉余（就是尽可能减少数据重复），插入异常，删除异常，更新异常，考虑分解模式后保持链接的依懒性。</p>
+<p>  范式：范式是对数据库的基本要求，以避免数据库出现重复等数据<br>        第一范式：每个属性对应的域值都是不可分的。<br>        第二范式：在第一范式的基础上，消除非主属性对候选码的传递依赖。<br>        第三范式：在第二范式的基础上，消除非主属性对候选码的部分依赖和传递依赖   *冷知识：一般数据库满足到该范式即可<br>        BCNF（巴斯-科德范式）：在第三范式基础上消除主属性对候选码的部分依赖和传递依赖。</p>
+<p>未完</p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2023/06/07/数据库系统原理/">http://example.com/2023/06/07/数据库系统原理/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+      
+      
+        
+
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2023 PanLuMing.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </div>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+    
+<script src="/localshare/js/social-share.js"></script>
+
+    
+<script src="/localshare/js/qrcode.js"></script>
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
