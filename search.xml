@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>c++</title>
+      <link href="/2023/09/25/c/"/>
+      <url>/2023/09/25/c/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>离散数学</title>
+      <link href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+      <url>/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="离散数学"><a href="#离散数学" class="headerlink" title="离散数学"></a>离散数学</h1><p>注：在学习之前一定要多练，由于考试不会考得很广，所以本文章只写重点。</p><p>┐（非）  ∨（析取） ∧（合取） -&gt;(条件)    &lt;–&gt;(双条件)    ⇔（等价）</p><h2 id="基本公式："><a href="#基本公式：" class="headerlink" title="基本公式："></a>基本公式：</h2><p>对合律：┐┐p⇔p</p><p>幂等律：p∨p⇔p  ;   p∧p⇔p</p><p>交换律：P∨Q⇔Q∨P   ;    P∧Q⇔Q∧P</p><p>结合律：(P∨Q)∨R⇔P∨(Q∨R)    ;     (P∧Q)∧R⇔P∧(Q∧R)</p><p>分配律：(P∨Q)∨R⇔（P∨R）∨（Q∨R）  ;   (P∧Q)∧R⇔（P∧R）∧（Q∨R）</p><p>德.摩根律：┐（P∨Q)⇔ ┐P∧ ┐Q    ；  ┐（P∧Q)⇔ ┐P∨ ┐Q</p><p>蕴含式：A-&gt;B⇔┐P∨Q</p><p>否定：┐┐P⇔P</p><p>以上的结合律，分配律，交换律和小学的加法结合律，分配律，交换律相差不大。</p><h2 id="哈斯图"><a href="#哈斯图" class="headerlink" title="哈斯图"></a>哈斯图</h2><p>方法：哈斯图的意义是一种关系（比如被整除）的链接方式，通常给元素量很少，从下往上一个个链接就可以了。</p><p>例一：画出A{1，2，3，9，18}上的整除关系哈斯图。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软件工程</title>
+      <link href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+      <url>/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库系统原理</title>
       <link href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
       <url>/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/</url>
