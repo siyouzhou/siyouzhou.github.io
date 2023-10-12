@@ -1,98 +1,170 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="数据：描述事物的符号记录。数据库：永久存储,有组织，可共享三个特点。数据库管理系统：应用于程序和系统之间。
-（1）数据定义：提供数据定义语言(DDL)定义表，视图，存储过程，触发器等。（2）数据操纵：提供数据操纵语言（DML），能操纵数据库中的基本数据，查询，插入，删除，修改。（3）数据库的运行管理" />
-  
+    <meta charset="utf-8" />
+    <title>数据库系统原理 | QI</title>
+    <meta name="author" content="PanLuMing" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
 
-  
-  
-  
-  
-  
-  
-  <title>数据库系统原理 | QI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据：描述事物的符号记录。数据库：永久存储,有组织，可共享三个特点。数据库管理系统：应用于程序和系统之间。 （1）数据定义：提供数据定义语言(DDL)定义表，视图，存储过程，触发器等。（2）数据操纵：提供数据操纵语言（DML），能操纵数据库中的基本数据，查询，插入，删除，修改。（3）数据库的运行管理：保证数据库的安全性，完整性，多用户对数据使用故障后的恢复。（4）数据库的建立和维护：创建数据库，对">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据库系统原理">
-<meta property="og:url" content="http://example.com/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/index.html">
-<meta property="og:site_name" content="QI">
-<meta property="og:description" content="数据：描述事物的符号记录。数据库：永久存储,有组织，可共享三个特点。数据库管理系统：应用于程序和系统之间。 （1）数据定义：提供数据定义语言(DDL)定义表，视图，存储过程，触发器等。（2）数据操纵：提供数据操纵语言（DML），能操纵数据库中的基本数据，查询，插入，删除，修改。（3）数据库的运行管理：保证数据库的安全性，完整性，多用户对数据使用故障后的恢复。（4）数据库的建立和维护：创建数据库，对">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/1.jpeg">
-<meta property="article:published_time" content="2023-06-07T02:03:37.241Z">
-<meta property="article:modified_time" content="2023-07-05T01:45:49.896Z">
-<meta property="article:author" content="PanLuMing">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/1.jpeg">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  
 
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="QI" rel="home">QI</a>
-      </h1>
-      
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      
-    </hgroup>
-
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
             </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>QI</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
     </nav>
-</header>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;QI</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-数据库系统原理" class="post-数据库系统原理 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>数据库系统原理</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/7
+        </span>
         
         
-  
-    <h1 class="entry-title article-title">
-      数据库系统原理
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://example.com/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" data-id="clnn1hev30003ygto7jzxcs4a" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
+    </div>
+    
+    <div class="content" v-pre>
         <p><img src="/images/1.jpeg"><br>数据：描述事物的符号记录。<br>数据库：永久存储,有组织，可共享三个特点。<br>数据库管理系统：应用于程序和系统之间。</p>
 <p>（1）数据定义：提供数据定义语言(DDL)定义表，视图，存储过程，触发器等。<br>（2）数据操纵：提供数据操纵语言（DML），能操纵数据库中的基本数据，查询，插入，删除，修改。<br>（3）数据库的运行管理：保证数据库的安全性，完整性，多用户对数据使用故障后的恢复。<br>（4）数据库的建立和维护：创建数据库，对数据库的空间维护，备份与恢复，重组和性能监听，分析等。<br>（5）数据库组织存储和管理：索引查找，顺序查找等。<br>（6）其它功能：网络通信功能，数据传输，相互访问。</p>
 <h2 id="数据库管理技术发展："><a href="#数据库管理技术发展：" class="headerlink" title="数据库管理技术发展："></a>数据库管理技术发展：</h2><h3 id="1-人工阶段：20世纪50年代中期"><a href="#1-人工阶段：20世纪50年代中期" class="headerlink" title="1.人工阶段：20世纪50年代中期"></a>1.人工阶段：20世纪50年代中期</h3><p>  特点：<br>数据保存<br>应用程序管理数据<br>数据面向应用<br>数据结构化：记录内无结构，整体无结构</p>
@@ -123,110 +195,51 @@
 <h2 id="存储函数与存储过程的区别："><a href="#存储函数与存储过程的区别：" class="headerlink" title="存储函数与存储过程的区别："></a>存储函数与存储过程的区别：</h2><p>.存储过程不能拥有输出参数，而存储过程可以拥有输出参数（函数必须拥有返回值或者表对象）<br>.使用CALL语句调用存储过程使用函数名调用函数<br>.存储函数必须包含RETURN语句，而存储过程不能包含</p>
 <p>事务的ACID特征<br>1.原子性：事务是不可分割的工作单位<br>2.一致性：事务必须满足数据库地完整性约束，完成后由一个一致性转变成另外一个一致性状态<br>3.隔离性：一个事务的执行不能被其它事务干扰<br>4.持续性：一个事务一旦提交，它对数据库中的数据改变应该是永久的</p>
 
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">
-    <time datetime="2023-06-07T02:03:37.241Z" class="entry-date">
-        2023-06-07
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="prev"><span class="meta-nav">←</span> 软件工程</a></span>
-    
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
-</form></aside>
-  
     
-  
     
-  
     
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/2023/09/25/C/">C++</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>
-          </li>
-        
-          <li>
-            <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
-
-  
     
-  
     
-  
+    
+    
 </div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2023 PanLuMing
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 QI
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;PanLuMing
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
 </footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
-<script src="/js/jquery-3.3.1.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
 
 
-<script src="/js/navigation.js"></script>
 
-<div id="bg"></div>
 
-  </div>
+    
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
