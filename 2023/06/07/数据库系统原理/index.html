@@ -1,170 +1,135 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>数据库系统原理 | QI</title>
-    <meta name="author" content="PanLuMing" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-
-<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
-
-
-
-<script src="/js/lib/preview.js"></script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css" />
-
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
-</head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
-            </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>QI</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;QI</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>数据库系统原理</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/6/7
-        </span>
-        
-        
-    </div>
+  <meta charset="utf-8">
+  
+  
+  <title>数据库系统原理 | QI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
     
-    <div class="content" v-pre>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QI</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数据库系统原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据库系统原理
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2023-06-07T02:03:37.241Z" itemprop="datePublished">2023年06月07日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         <p><img src="/images/1.jpeg"><br>数据：描述事物的符号记录。<br>数据库：永久存储,有组织，可共享三个特点。<br>数据库管理系统：应用于程序和系统之间。</p>
 <p>（1）数据定义：提供数据定义语言(DDL)定义表，视图，存储过程，触发器等。<br>（2）数据操纵：提供数据操纵语言（DML），能操纵数据库中的基本数据，查询，插入，删除，修改。<br>（3）数据库的运行管理：保证数据库的安全性，完整性，多用户对数据使用故障后的恢复。<br>（4）数据库的建立和维护：创建数据库，对数据库的空间维护，备份与恢复，重组和性能监听，分析等。<br>（5）数据库组织存储和管理：索引查找，顺序查找等。<br>（6）其它功能：网络通信功能，数据传输，相互访问。</p>
 <h2 id="数据库管理技术发展："><a href="#数据库管理技术发展：" class="headerlink" title="数据库管理技术发展："></a>数据库管理技术发展：</h2><h3 id="1-人工阶段：20世纪50年代中期"><a href="#1-人工阶段：20世纪50年代中期" class="headerlink" title="1.人工阶段：20世纪50年代中期"></a>1.人工阶段：20世纪50年代中期</h3><p>  特点：<br>数据保存<br>应用程序管理数据<br>数据面向应用<br>数据结构化：记录内无结构，整体无结构</p>
@@ -195,51 +160,239 @@
 <h2 id="存储函数与存储过程的区别："><a href="#存储函数与存储过程的区别：" class="headerlink" title="存储函数与存储过程的区别："></a>存储函数与存储过程的区别：</h2><p>.存储过程不能拥有输出参数，而存储过程可以拥有输出参数（函数必须拥有返回值或者表对象）<br>.使用CALL语句调用存储过程使用函数名调用函数<br>.存储函数必须包含RETURN语句，而存储过程不能包含</p>
 <p>事务的ACID特征<br>1.原子性：事务是不可分割的工作单位<br>2.一致性：事务必须满足数据库地完整性约束，完成后由一个一致性转变成另外一个一致性状态<br>3.隔离性：一个事务的执行不能被其它事务干扰<br>4.持续性：一个事务一旦提交，它对数据库中的数据改变应该是永久的</p>
 
-    </div>
-    
-    
-    
-    
-    
-    
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 QI
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;PanLuMing
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
         
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%EF%BC%9A"><span class="toc-text">数据库管理技术发展：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%BA%E5%B7%A5%E9%98%B6%E6%AE%B5%EF%BC%9A20%E4%B8%96%E7%BA%AA50%E5%B9%B4%E4%BB%A3%E4%B8%AD%E6%9C%9F"><span class="toc-text">1.人工阶段：20世纪50年代中期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5%EF%BC%9A20%E4%B8%96%E7%BA%AA50%E5%B9%B4%E4%BB%A3%E5%90%8E%E6%9C%9F%E5%88%B020%E4%B8%96%E7%BA%AA60%E5%B9%B4%E4%BB%A3%E4%B8%AD%E6%9C%9F"><span class="toc-text">2.文件系统阶段：20世纪50年代后期到20世纪60年代中期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5%EF%BC%9A20%E4%B8%96%E7%BA%AA60%E5%B9%B4%E4%BB%A3%E5%90%8E%E6%9C%9F"><span class="toc-text">3.数据库系统阶段：20世纪60年代后期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">数据库的三级模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%90%E8%A1%8C%E4%B8%8E%E5%BA%94%E7%94%A8%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-text">数据库的运行与应用结构：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90%E8%A6%81%E7%B4%A0%EF%BC%9A"><span class="toc-text">数据模型组成要素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%EF%BC%9A"><span class="toc-text">关系完整性约束：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E7%9A%84%E4%BD%93%E6%A3%80%EF%BC%9A"><span class="toc-text">关系模型完整性约束的体检：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E5%9C%B0%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">可能存在地异常问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%9A"><span class="toc-text">数据库生命周期：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="toc-text">数据库的设计目标：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">数据库的设计内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">数据库设计方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E9%9B%86%E5%92%8C%E5%88%86%E6%9E%90%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-text">收集和分析数据：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%EF%BC%9A"><span class="toc-text">编写需求分析报告：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">物理设计方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-text">存储函数与存储过程的区别：</span></a></li></ol>
     </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2023/06/07/数据库系统原理/">http://example.com/2023/06/07/数据库系统原理/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          软件工程
+        
+      </div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/09/25/C/">C++</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2023 PanLuMing.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
 </footer>
 
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
     </div>
-    <script src="/js/main.js"></script>
+  </div>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
     
-    
-
-
-
+<script src="/localshare/js/social-share.js"></script>
 
     
+<script src="/localshare/js/qrcode.js"></script>
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

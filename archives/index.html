@@ -1,243 +1,308 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Archives | QI</title>
-    <meta name="author" content="PanLuMing" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-
-<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
-
-
-
-<script src="/js/lib/preview.js"></script>
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css" />
-
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
-</head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
-            </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>QI</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;QI</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
+  <meta charset="utf-8">
+  
+  
+  <title>Archive | QI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="QI" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
     
-    <div id="timeline-wrap" ref="timeline">
-        
-        <div class="timeline" data-title="数据库系统原理">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/6/7</div>
-                <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">
-                    <h3>数据库系统原理</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="软件工程">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/25</div>
-                <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
-                    <h3>软件工程</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="离散数学">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/25</div>
-                <a href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
-                    <h3>离散数学</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="c++">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/25</div>
-                <a href="/2023/09/25/C/">
-                    <h3>C++</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 QI
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;PanLuMing
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QI</a>
+      </h1>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+
+  
+  
+    
+    
+    <section class="archives-wrap">
+      <div class="archive-title">
+        
+          <i class="fa fa-date"></i>
+          2023
+        
+      </div>
+      <div class="archives">
+  
+  <ul class="archive-article archive-type-post">
+  <li class="archive-article-inner">
+    <a href="/2023/09/25/C/">
+      <time class="dt-published" datetime="2023-09-25T00:44:14.000Z" itemprop="datePublished">2023年09月25日</time>
+      | <span class="archive-article-title">C++</span>
+    </a>
+  </li>
+</ul>
+
+
+  
+  
+  <ul class="archive-article archive-type-post">
+  <li class="archive-article-inner">
+    <a href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
+      <time class="dt-published" datetime="2023-09-25T00:33:46.000Z" itemprop="datePublished">2023年09月25日</time>
+      | <span class="archive-article-title">离散数学</span>
+    </a>
+  </li>
+</ul>
+
+
+  
+  
+  <ul class="archive-article archive-type-post">
+  <li class="archive-article-inner">
+    <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+      <time class="dt-published" datetime="2023-09-25T00:33:06.000Z" itemprop="datePublished">2023年09月25日</time>
+      | <span class="archive-article-title">软件工程</span>
+    </a>
+  </li>
+</ul>
+
+
+  
+  
+  <ul class="archive-article archive-type-post">
+  <li class="archive-article-inner">
+    <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">
+      <time class="dt-published" datetime="2023-06-07T02:03:37.241Z" itemprop="datePublished">2023年06月07日</time>
+      | <span class="archive-article-title">数据库系统原理</span>
+    </a>
+  </li>
+</ul>
+
+
+
+  </div></section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/09/25/C/">C++</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023年</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2023 PanLuMing.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
 </footer>
 
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
     </div>
-    <script src="/js/main.js"></script>
-    
+  </div>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
